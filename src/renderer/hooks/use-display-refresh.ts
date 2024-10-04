@@ -56,7 +56,7 @@ export const useDisplayRefresh = <TFilter>({
 
     const search = useCallback(
         (e: ChangeEvent<HTMLInputElement>) => {
-            const searchTerm = e.target.value === '' ? undefined : e.target.value;
+            const searchTerm = e.target.value || undefined;
             const updatedFilters = setFilter({
                 data: { searchTerm },
                 itemType,
